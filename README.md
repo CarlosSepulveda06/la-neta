@@ -26,6 +26,24 @@ Además, antes de entregarte un texto lo revisa: que no invente datos que no le 
 
 ## Instalación
 
+Escoge dónde lo quieres usar. Ninguno de los caminos de chat necesita terminal.
+
+### 1. Chat de Claude (Pro, Max, Team o Enterprise)
+1. Descarga [`chat/la-neta.zip`](chat/la-neta.zip).
+2. En Claude: **Ajustes → Capacidades → Skills → Upload skill** y sube el zip. Necesitas tener activada la ejecución de código.
+3. En un chat nuevo escribe *"hazme el cuestionario de estilo"*.
+4. Al final te da **`mi-voz.zip`**, tu skill personal con tu perfil adentro. Súbela igual que la primera. Desde ahí, cuando pidas redactar algo, te pregunta si lo escribe como tú.
+
+### 2. ChatGPT gratis (con Proyectos)
+1. En ChatGPT crea un **Proyecto** (por ejemplo "la-neta").
+2. Abre los ajustes del proyecto y pega todo el texto de [`chatgpt/instrucciones-proyecto.txt`](chatgpt/instrucciones-proyecto.txt) en **Instrucciones**.
+3. Dentro del proyecto escribe *"hazme el cuestionario de estilo"*.
+4. Al final te da tu perfil en un bloque. Pégalo en las instrucciones, donde dice `(vacío)`.
+5. Todo lo que pidas redactar **dentro de ese proyecto** sale con tu estilo.
+
+> Si tu ChatGPT tiene skills (planes de paga), también puedes subir `chat/la-neta.zip` como en Claude.
+
+### 3. Claude Code
 Dentro de Claude Code:
 
 ```
@@ -33,7 +51,7 @@ Dentro de Claude Code:
 /plugin install la-neta@la-neta
 ```
 
-### Probarlo sin instalar
+#### Probarlo sin instalar
 
 ```
 git clone https://github.com/CarlosSepulveda06/la-neta.git
@@ -65,7 +83,7 @@ Te va a preguntar si lo escribe como tú y te pide los datos que falten en vez d
 
 ## Privacidad
 
-- Tu perfil se guarda en tu compu, en `~/.claude/la-neta/mi-perfil.md`. **No es parte de este repo** y no se sube a ningún lado por el plugin.
+- Tu perfil se guarda en tu compu (Claude Code), en tu skill personal `mi-voz` (chat de Claude) o en las instrucciones de tu proyecto (ChatGPT). **Nunca es parte de este repo.**
 - Cuando Claude escribe algo por ti, **lee tu perfil como contexto**, igual que cualquier mensaje que le mandas. O sea, sí viaja al proveedor de la IA mientras lo usa.
 - Por eso: **no pongas datos sensibles en tu perfil ni en los textos de ejemplo.** Nada de contraseñas, direcciones, números de cuenta, CURP, RFC o datos de otras personas.
 
@@ -75,10 +93,15 @@ Te va a preguntar si lo escribe como tú y te pide los datos que falten en vez d
 .claude-plugin/
   plugin.json           manifiesto del plugin
   marketplace.json      para instalarlo con /plugin
-skills/
+skills/                 versión para Claude Code
   cuestionario-estilo/  la entrevista y la plantilla del perfil
   escribir-como-yo/     la que escribe con tu voz
   live-dashboard/       borrador
+chat/                   versión para el chat de Claude y ChatGPT con skills
+  la-neta/              la skill (entrevista + generador de tu skill personal)
+  la-neta.zip           lista para subir
+chatgpt/
+  instrucciones-proyecto.txt   para Proyectos de ChatGPT gratis
 ```
 
 ## Licencia
