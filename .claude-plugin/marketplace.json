@@ -1,0 +1,16 @@
+{
+  "name": "la-neta",
+  "owner": {
+    "name": "Carlos Sepúlveda"
+  },
+  "plugins": [
+    {
+      "name": "la-neta",
+      "source": "./",
+      "description": "Escribe con tu voz: te entrevista, aprende tu estilo y lo aplica según con quién hablas (compas, clientes o escuela). Enfoque mexicano."
+    }
+  ],
+  "metadata": {
+    "description": "Escribe con tu voz: te entrevista, aprende tu estilo y lo aplica según con quién hablas (compas, clientes o escuela). Enfoque mexicano."
+  }
+}
